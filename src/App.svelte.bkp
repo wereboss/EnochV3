@@ -1,0 +1,77 @@
+<script>
+  import { Route, Router, Link } from "svelte-routing";
+  import BottomAppBar, {
+    Section,
+    AutoAdjust,
+  } from '@smui-extra/bottom-app-bar';  
+  import IconButton from '@smui/icon-button';
+  import Home from "./pages/Home.svelte";
+  import Meaning from "./components/Meaning.svelte";
+  import Tasks from "./pages/Tasks.svelte";
+
+ let bottomAppBar;
+
+</script>
+
+<Router>
+  <main class="app">
+  <AutoAdjust {bottomAppBar}>
+    <Route path="/" component={Tasks} />
+    <Route path="/tasks" component={Tasks} />
+    <!--
+    <Route path="/tasks" >
+      <Tasks urlTask="https://tasky.free.beeceptor.com/api/tasks"/>
+    </Route>
+    -->
+    <Route path="/find/:word" let:params>
+      <Meaning word={params.word} />
+    </Route>
+
+    <div class="flexor-content">
+      <h5>Flex Static</h5>
+    </div>
+
+    <nav>
+      <Link to="/">Home</Link>
+    </nav>
+   </AutoAdjust>   
+ 
+ <BottomAppBar bind:this={bottomAppBar} variant="fixed">
+  <Section>
+    <Link to="/">
+      <IconButton class="material-icons">house</IconButton>
+    </Link>
+  </Section>
+  <Section>
+    <IconButton class="material-icons" aria-label="Search">search</IconButton>
+  </Section>
+  <Section>
+    <IconButton class="material-icons" aria-label="Search">search</IconButton>
+  </Section>
+  <Section>
+    <IconButton class="material-icons" aria-label="Search">search</IconButton>
+  </Section>
+  <Section>
+    <IconButton class="material-icons" aria-label="Search">search</IconButton>
+  </Section>
+  <Section>
+    <IconButton class="material-icons" aria-label="More">more_vert</IconButton>
+  </Section>
+</BottomAppBar>
+  
+  </main>
+</Router>
+
+<style>
+  /* Hide everything above this component. */
+  :global(#smui-app),
+  :global(body),
+  :global(html) {
+    display: block !important;
+    height: auto !important;
+    width: auto !important;
+    position: static !important;
+  }
+</style>
+
+

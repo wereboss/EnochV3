@@ -1,0 +1,46 @@
+[
+  {
+    "id": 2,
+    "task": "Brush Teeth",
+    "setBy": "Mom",
+    "setFor": "Ethan",
+    "deadline": "1899-12-30T00:23:18.000Z",
+    "rate": 5,
+    "status": "NotStarted",
+    "credits": "",
+    "didBy": ""
+  },
+  {
+    "id": 3,
+    "task": "Potty Time",
+    "setBy": "Mom",
+    "setFor": "Ethan",
+    "deadline": "1899-12-30T00:53:18.000Z",
+    "rate": 5,
+    "status": "NotStarted",
+    "credits": "",
+    "didBy": ""
+  },
+  {
+    "id": 4,
+    "task": "Take Bath",
+    "setBy": "Mom",
+    "setFor": "Ethan",
+    "deadline": "1899-12-30T01:23:18.000Z",
+    "rate": 5,
+    "status": "NotStarted",
+    "credits": "",
+    "didBy": ""
+  },
+  {
+    "id": 5,
+    "task": "Breakfast",
+    "setBy": "Mom",
+    "setFor": "Ethan",
+    "deadline": "1899-12-30T01:53:18.000Z",
+    "rate": 5,
+    "status": "NotStarted",
+    "credits": "",
+    "didBy": ""
+  }
+]

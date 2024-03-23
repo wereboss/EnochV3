@@ -1,0 +1,30 @@
+{
+  "name": "vitegas",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5173",
+    "build": "rm -rf dist && vite build",
+    "brun": "run-s build:**",
+    "brungas": "run-s build:** && run-s gas:**",
+    "build:1:gas": "rm -rf gas/client/*",
+    "build:2:index": "vite build && cp -rf dist/* gas/client/",
+    "build:3:page": "vite build --config about.vite.config.js && cp -rf dist/* gas/client/",
+    "gas:1:push": "cd gas && clasp push && cd ..",
+    "gas:2:deploy": "cd gas && clasp deploy --deploymentId AKfycbzwFODZ4gbRF0RnyyXQl0lFppAuMPUhOWMrjvGfpEwajWysrYwnBf4GSDlO1Bbp4Agp && cd ..",
+    "preview": "vite preview --host 0.0.0.0 --port 5173"
+  },
+  "devDependencies": {
+    "@smui-extra/bottom-app-bar": "^7.0.0-beta.18",
+    "@smui/icon-button": "^7.0.0-beta.18",
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "svelte": "^4.2.12",
+    "vite": "^5.1.6",
+    "vite-plugin-singlefile": "^2.0.1"
+  },
+  "dependencies": {
+    "svelte-material-ui": "^7.0.0-beta.18",
+    "svelte-routing": "^2.12.0"
+  }
+}
