@@ -1,7 +1,7 @@
 <script>
   import mockData from '../assets/mockcredits.json';
   import { onMount } from 'svelte';
-
+  const production = true;
   let creditItems = [];
   let loaded = false;
   let errorMessage = "No connection. Check your internet";
@@ -17,14 +17,17 @@
     }
   }
   onMount(() => {
-  console.log("About to call Google");
- // google.script.run
- //   .withSuccessHandler(succCredits)
- //   .getCredits();
+    console.log("About to call Google");
+    if(production) {
+      google.script.run
+        .withSuccessHandler(succCredits)
+        .getCredits();
+    }
   });
-  creditItems = mockData;
-  loaded = true;
-  
+  if(!production) {
+    creditItems = mockData;
+    loaded = true;
+  }
 </script> 
 
 

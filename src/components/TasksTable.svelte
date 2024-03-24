@@ -5,7 +5,7 @@
   import SingleTaskView from './SingleTaskView.svelte';
   import { onMount } from 'svelte';
   export let singleTaskModal;
-
+  const production = true;
   let taskItems = [];
   let loaded = false;
   let selectedTask = {task:"dummy"};
@@ -26,12 +26,16 @@
     console.log("TasksTable: OnMount");
     singleTaskModal = new bootstrap.Modal('#singletask', {focus:true,keyboard:true});
     console.log("About to call Google");
-   // google.script.run
-   //   .withSuccessHandler(succTasks)
-   //   .getTasks();
+    if(production) {
+      google.script.run
+      .withSuccessHandler(succTasks)
+      .getTasks();
+   }
   });
-    taskItems = mockData;
-    loaded = true;
+    if(!production) {
+      taskItems = mockData;
+      loaded = true;
+    }
 
     function rowClick(obj) {
       console.log(JSON.stringify(obj));
@@ -48,13 +52,13 @@
 
 <!-- Single Task Modal -->
 <div class="modal modal-xl" id="singletask" tabindex="-1">
-  <div class="modal-dialog">
+  <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">View Task</h5>
+        <h5 class="modal-title">Task Details</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body bg-secondary-subtle">
         <SingleTaskView task={selectedTask}/>
       </div>
       <div class="modal-footer">
