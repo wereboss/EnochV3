@@ -13,7 +13,7 @@
   }
 </script>
 
-<button type="button" class="btn btn-secondary" on:click={() => onBClick(pageName)}>
+<button type="button" class="btn" on:click={() => onBClick(pageName)}>
   <div class="container">
     <div class="row">
       <i class="fa fa-{faIconName} fs-1" aria-hidden="true"></i>

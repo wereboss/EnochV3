@@ -1,4 +1,26 @@
 <script>
+    import ContentHighlights from "../components/ContentHighlights.svelte";
+import SelfSummary from "../components/SelfSummary.svelte";
+
+</script>
+
+
+<div class="container">
+  <div class="row">
+    <SelfSummary />
+  </div>
+  <div class="row">
+    <ContentHighlights />
+  </div>
+</div>
+
+
+
+
+
+<!--  old code
+
+<script>
   import { navigate } from "svelte-routing";
   let enteredWord;
 </script>
@@ -16,3 +38,6 @@
       <button type="submit">Search Word</button>
     {/if}
 </form>
+
+
+-->

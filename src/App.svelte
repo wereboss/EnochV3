@@ -3,11 +3,13 @@
   import BottomNav from "./components/BottomNav.svelte";
   import Tasks from './pages/Tasks.svelte';
   import Credits from './pages/Credits.svelte';
+  import Home from './pages/Home.svelte';
   import { onMount } from "svelte";
 
   const pagesArr = [
 		{ pageName: 'Tasks', component: Tasks },
 		{ pageName: 'Credits', component: Credits },
+		{ pageName: 'Home', component: Home },
 	];
 
   let currentPage;
@@ -18,7 +20,7 @@
   }
   onMount(() => {
     console.log("onMount");
-    currentPage = Tasks;
+    currentPage = Home;
   });
 </script>
 
