@@ -21,10 +21,10 @@ function doGet(e) {
   //return ContentService.createTextOutput(JSON.stringify(taskObj)).setMimeType(ContentService.MimeType.JSON);
 
   const enoObj = extractReqObj(e);
-  Logger.log("enoObj received:" + JSON.stringify(enoObj,null,2));
+  //Logger.log("enoObj received:" + JSON.stringify(enoObj,null,2));
 //  let enoResp = {};
   if(enoObj && enoObj.isValid) {
-    Logger.log("about to open:" + enoObj.page); 
+    //Logger.log("about to open:" + enoObj.page); 
     return HtmlService.createTemplateFromFile(enoObj.page).evaluate()
       .setTitle("Enoch")
       .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)

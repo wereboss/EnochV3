@@ -1,7 +1,7 @@
 <script>
   import mockData from '../assets/mockcredits.json';
   import { onMount } from 'svelte';
-  const production = true;
+  const production = false;
   let creditItems = [];
   let loaded = false;
   let errorMessage = "No connection. Check your internet";

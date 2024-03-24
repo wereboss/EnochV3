@@ -5,7 +5,7 @@
   import SingleTaskView from './SingleTaskView.svelte';
   import { onMount } from 'svelte';
   export let singleTaskModal;
-  const production = true;
+  const production = false;
   let taskItems = [];
   let loaded = false;
   let selectedTask = {task:"dummy"};
