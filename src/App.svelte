@@ -11,27 +11,13 @@
 	];
 
   let currentPage;
- // function importSvPage(page) {
- //   console.log("importSvPage:" + page);
- //   import('./pages/' + page + '.svelte')
- //     .then(res => {
- //       console.log("importSvPage: updating currentPage");
- //       currentPage = res.default;
- //       })
- //       .catch((err) => {
- //       console.log("importSvPage error:" + err.message);
- //     });
- // }
   function loadPage(event) {
     console.log("loadPage:" + event.detail.pageName);
     let pageItem = pagesArr.find(({pageName}) => pageName === event.detail.pageName);
     currentPage = pageItem.component;
-   // const pageName = event.detail.pageName;
- //   importSvPage(event.detail.pageName);
   }
   onMount(() => {
     console.log("onMount");
-    //importSvPage("Tasks");
     currentPage = Tasks;
   });
 </script>

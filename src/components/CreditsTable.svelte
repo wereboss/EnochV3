@@ -18,9 +18,9 @@
   }
   onMount(() => {
   console.log("About to call Google");
-  //google.script.run
-  //  .withSuccessHandler(succCredits)
-  //  .getCredits();
+ // google.script.run
+ //   .withSuccessHandler(succCredits)
+ //   .getCredits();
   });
   creditItems = mockData;
   loaded = true;
